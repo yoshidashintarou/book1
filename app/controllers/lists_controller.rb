@@ -1,4 +1,9 @@
-class ListsController < ApplicationController
+class ListsController <  ApplicationController
+  
+  def top
+  
+  end
+  
   def new
     @list = List.new
   end
@@ -6,7 +11,8 @@ class ListsController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    redirect_to'/list'
+    redirect_to'/lists'
+    
   end
  
   def index
@@ -17,6 +23,7 @@ class ListsController < ApplicationController
   end
 
   def edit
+   @list = List.find(params[:id])
   end
   
   private
